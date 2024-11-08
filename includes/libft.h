@@ -6,14 +6,15 @@
 /*   By: kmuhlbau <kmuhlbau@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 21:58:39 by kmuhlbau          #+#    #+#             */
-/*   Updated: 2024/11/06 13:06:33 by kmuhlbau         ###   ########.fr       */
+/*   Updated: 2024/11/06 13:33:00 by kmuhlbau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include "src/printf/ft_printf.h"
+# include "ft_printf.h"
+# include "get_next_line.h"
 # include <errno.h>
 # include <stddef.h>
 # include <stdlib.h>

@@ -2,10 +2,8 @@ NAME = libft.a
 SRC_DIR = src
 OUT_DIR = out
 
-# Source directories
-VPATH = src/string:src/mem:src/put_utils:src/lst:src/printf
+VPATH = src/string:src/mem:src/put_utils:src/lst:src/printf:src/gnl
 
-# Source files by category
 STRING_SRCS = ft_atoi.c \
 		ft_isalnum.c \
 		ft_isalpha.c \
@@ -61,27 +59,24 @@ PRINTF_SRCS = ft_printf.c \
 		ft_printf_digit.c \
 		ft_uitoa.c
 
-# All source files
-SRCS = $(STRING_SRCS) $(MEM_SRCS) $(PUT_UTILS_SRCS) $(LST_SRCS) $(PRINTF_SRCS)
+GNL_SRCS = get_next_line.c \
+		get_next_line_utils.c
 
-# Compiler settings
+SRCS = $(STRING_SRCS) $(MEM_SRCS) $(PUT_UTILS_SRCS) $(LST_SRCS) $(PRINTF_SRCS) $(GNL_SRCS)
+
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I. -Iincludes
+CFLAGS = -Wall -Wextra -Werror -Iincludes
 
-# Generate object files in output directory
 OBJS = $(addprefix $(OUT_DIR)/, $(SRCS:.c=.o))
 
 all: $(NAME)
 
-# Main target
 $(NAME): $(OUT_DIR) $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
 
-# Create output directory
 $(OUT_DIR):
 	mkdir -p $@
 
-# Compile source files
 $(OUT_DIR)/%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
